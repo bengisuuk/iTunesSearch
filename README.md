@@ -9,4 +9,4 @@ Second screen is the item's detail that click the first screen
 
 ## Building
 
-You can open the porject in Xcode and run.
+You can open the project in Xcode and press the run button.
