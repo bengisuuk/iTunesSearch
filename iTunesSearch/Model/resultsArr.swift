@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct  ItunesSearchResults : Codable {
+struct  resultsArr : Decodable {
     
 
     //let wrapperType: String
@@ -16,8 +16,8 @@ struct  ItunesSearchResults : Codable {
     // let collectionId: Int
     //let  trackId: Int
     //let  artistName: String
-    var wrapperType : String?
-    var  collectionName: String?
+ public var wrapperType : String
+   public var  collectionName: String
    // let  trackName: String
    // let  collectionCensoredName: String
    // let  trackCensoredName: String
@@ -27,10 +27,10 @@ struct  ItunesSearchResults : Codable {
    // let  previewUrl: String
    // let  artworkUrl30: String
    // let artworkUrl60: String
-    var  artworkUrl100: String?
-    var  collectionPrice: Double?
+   public var  artworkUrl100: String
+   public var  collectionPrice: Double
   //public   let    trackPrice: Int
-    var   releaseDate: String?
+    public var   releaseDate: String
   //  let  collectionExplicitness: String
   //  let   trackExplicitness: String
   //  let   discCount: Int

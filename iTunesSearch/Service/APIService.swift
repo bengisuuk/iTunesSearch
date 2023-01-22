@@ -15,8 +15,8 @@ class WebService{
     
     //JSOn verisi oluşturulan resultArr'e yazılıyor.
     
-    func getData( url: URL, filter : String, completion : @escaping ( [ItunesSearchResults] )  -> ()){
-        var searchItem = [ItunesSearchResults]()
+    func getData( url: URL, filter : String, completion : @escaping ( [resultsArr] )  -> ()){
+        var searchItem = [resultsArr]()
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
                 print("bu url geliyo \(url)")
@@ -40,7 +40,7 @@ class WebService{
                                                 if  let wrapperType = resultItem["wrapperType"] as? String{
                                                     
                                                     
-                                                    let temp = ItunesSearchResults(wrapperType: wrapperType ,
+                                                    let temp = resultsArr(wrapperType: wrapperType ,
                                                                           collectionName : collectionName , artworkUrl100 : artworkUrl100 , collectionPrice : collectionPrice , releaseDate : releaseDate)
                                                 searchItem.append(temp)
        
