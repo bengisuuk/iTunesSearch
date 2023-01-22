@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct APIResult : Decodable {
-    let resultCount : Int
-    let results : [resultsArr]
+struct ItunesSearchResponse: Codable {
+    let resultCount : Int?
+    let results : [ItunesSearchResults]?
 }
