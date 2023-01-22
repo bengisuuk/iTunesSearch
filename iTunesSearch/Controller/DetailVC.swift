@@ -17,20 +17,20 @@ class DetailVC: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     
-    var result : resultsArr!
+    var result : ItunesSearchResults!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         releaseLabel.text = result.releaseDate
-        priceLabel.text  = String(result.collectionPrice)
+       // priceLabel.text  = String(result.collectionPrice)
         nameLabel.text = result.collectionName
         
-        let url = URL(string: result.artworkUrl100)
-        if let data = try? Data(contentsOf: url!){
-                imageView.image =  UIImage(data: data)!
-        }
+     //   let url = URL(string: result.artworkUrl100)
+     //   if let data = try? Data(contentsOf: url!){
+       //         imageView.image =  UIImage(data: data)!
+       // }
         
         // Do any additional setup after loading the view.
     }
