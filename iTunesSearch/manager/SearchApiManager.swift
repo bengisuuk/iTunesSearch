@@ -11,7 +11,7 @@ extension ApiManager {
     func getAlbumOnItunes(term: String, entity: String, completion: @escaping (NetworkResponse<AlbumResult>) -> ()) {
         var params = [String: String]()
         params["term"] = "\(term)"
-        params["entity"] = "\(entity)"
+        params["media"] = "\(entity)"
         params["limit"] = "20"
         ApiManager.shared.getRequest(type: AlbumResult.self, endpoint: .term, parameters: params) { (response) in
             completion(response)

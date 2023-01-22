@@ -8,9 +8,9 @@ import Foundation
 // MARK: - Welcome
 class AlbumResult: Decodable {
     let resultCount: Int
-    let results: [AlbumModel]
+    let results: [AlbumModel?]
 
-    init(resultCount: Int, results: [AlbumModel]) {
+    init(resultCount: Int, results: [AlbumModel?]) {
         self.resultCount = resultCount
         self.results = results
     }
@@ -18,19 +18,19 @@ class AlbumResult: Decodable {
 
 // MARK: - Result
 class AlbumModel: Decodable {
-    let wrapperType, collectionType: String
-    let artistID, collectionID: Int
+    let wrapperType, collectionType: String?
+    let artistID, collectionID: Int?
     let amgArtistID: Int?
-    let artistName, collectionName, collectionCensoredName: String
+    let artistName, collectionName, collectionCensoredName: String?
     let artistViewURL: String?
-    let collectionViewURL: String
-    let artworkUrl60, artworkUrl100: String
+    let collectionViewURL: String?
+    let artworkUrl60, artworkUrl100: String?
     let collectionPrice: Double?
-    let collectionExplicitness: String
-    let trackCount: Int
-    let copyright, country, currency: String
-    let releaseDate: String
-    let primaryGenreName: String
+    let collectionExplicitness: String?
+    let trackCount: Int?
+    let copyright, country, currency: String?
+    let releaseDate: String?
+    let primaryGenreName: String?
 
     enum CodingKeys: String, CodingKey {
             case wrapperType, collectionType

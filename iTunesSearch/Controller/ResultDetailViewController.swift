@@ -5,37 +5,33 @@
 //  Created by Bengisu Karakılınç on 7.01.2021.
 //
 
-//Seçilen Grid'in detay bilgilerini içeren controller
-
 import UIKit
 
-class DetailVC: UIViewController {
+class ResultDetailViewController: UIViewController {
 
     @IBOutlet weak var releaseLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    
-    
-    var result : ItunesSearchResults!
+    var selectedItem: AlbumModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        releaseLabel.text = result.releaseDate
-       // priceLabel.text  = String(result.collectionPrice)
-        nameLabel.text = result.collectionName
-        
-     //   let url = URL(string: result.artworkUrl100)
-     //   if let data = try? Data(contentsOf: url!){
-       //         imageView.image =  UIImage(data: data)!
-       // }
-        
+        self.loadDetailInfo()
         // Do any additional setup after loading the view.
     }
     
-
+    func loadDetailInfo(){
+        guard let item = self.selectedItem else { return }
+        self.nameLabel.text = "Name: " + (item.collectionName ?? "")
+        self.priceLabel.text = "Price: " + String(describing: item.collectionPrice ?? 0)
+        self.releaseLabel.text = "Release Date: " + (item.releaseDate ?? "")
+        let url = URL(string: String(describing: item.artworkUrl60 ?? "" ))
+        if let data = try? Data(contentsOf: url!){
+            self.imageView.image =  UIImage(data: data)!
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

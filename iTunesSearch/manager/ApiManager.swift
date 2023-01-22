@@ -78,9 +78,6 @@ class ApiManager: NSObject {
                 return
             }
             completion(.error(errorModel.error ?? ErrorModel(code: "", message: "", desc: "", errorId: 0, status: 0)))
-       // case 403:
-          //  AppSession.shared.logoutUser()
-         //   completion(.failure(.invalidToken))
         default:
             completion(.failure(.customError))
         }
